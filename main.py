@@ -1,16 +1,26 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import os
+import uvicorn
 
-# Crear la app
-app = FastAPI()
+from controller import router
+from dotenv import load_dotenv
 
-# Un solo endpoint - Hello World
-@app.get("/")
-def hello_world():
-    return {"message": "Hello World from Render!"}
+app = FastAPI(
+    title="Debate Bot API",
+    description="API for a debate bot that defends positions",
+    version="1.0.0"
+)
 
-# Esto es necesario para que Render pueda ejecutar la app
+
+app.include_router(router)
+
 if __name__ == "__main__":
-    import uvicorn
-    port = int(os.getenv("PORT", 8000))
-    uvicorn.run(app, host="0.0.0.0", port=port)
+
+    load_dotenv()  
+    port = int(os.getenv("PORT"))
+    uvicorn.run(
+        app, 
+        host="0.0.0.0", 
+        port=port,
+    )
