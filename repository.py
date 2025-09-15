@@ -1,8 +1,6 @@
-import json
-import redis
-import os
 from typing import Optional, List, Dict
 from models import Message
+from properties import properties
 
 class ConversationRepository:
 

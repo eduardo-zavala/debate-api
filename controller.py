@@ -7,7 +7,7 @@ router = APIRouter(prefix="", tags=["debate"])
 @router.post("/debate")
 def debate(request: DebateRequest) -> DebateResponse:
     try:
-        response = debate_service.debate(request)
+        response = debate_service.process_debate(request)
         return response
     
     except Exception as e:
