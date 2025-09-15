@@ -1,9 +1,8 @@
 import uuid
-import random
-from typing import Optional, Dict, List
-from models import DebateRequest, DebateResponse, Message
-from repository import conversation_repository 
-from llm_engine import llm_engine
+from typing import List
+from .models import DebateRequest, DebateResponse, Message
+from .repository import conversation_repository 
+from .llm_engine import llm_engine
 
 class DebateService:
 

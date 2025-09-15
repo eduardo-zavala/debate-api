@@ -1,7 +1,6 @@
-import os
-from typing import List, Dict, Optional
-from properties import properties
-from models import Message
+from typing import List, Dict
+from .properties import properties
+from .models import Message
 
 class LLMEngine:
 

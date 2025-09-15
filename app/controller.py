@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from models import DebateRequest, DebateResponse
-from service import debate_service
+from .models import DebateRequest, DebateResponse
+from .service import debate_service
 
 router = APIRouter(prefix="", tags=["debate"])
 

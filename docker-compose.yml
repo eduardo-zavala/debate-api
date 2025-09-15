@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  debate-api:
+    build: .
+    container_name: debate-bot-api
+    ports:
+      - "${PORT:-8000}:8000"   # host PORT -> container 8000
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

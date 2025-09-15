@@ -1,6 +1,6 @@
 from typing import Optional, List, Dict
-from models import Message
-from properties import properties
+from .models import Message
+from .properties import properties
 
 class ConversationRepository:
 

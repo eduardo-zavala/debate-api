@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
-from properties import properties
-from controller import router
+from .properties import properties
+from .controller import router
 
 app = FastAPI(
     title="Debate Bot API",
